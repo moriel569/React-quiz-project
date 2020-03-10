@@ -22,7 +22,7 @@ const Input = props => {
         <div className={cls.join(' ')}>
             <label htmlFor={htmlFor}>{props.label}</label>
             <input
-                type="inputType"
+                type={inputType}
                 id={htmlFor}
                 value={props.value}
                 onChange={props.onChange}
