@@ -4,11 +4,11 @@ import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz'
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz'
 import Loader from '../../components/UI/Loader/Loader'
 import { connect } from 'react-redux'
-import * as fns from '../../store/actions/quiz'
+
 import fetchQuizById from '../../store/actions/quiz'
 import quizAnswerClick from '../../store/actions/quiz'
 import retryQuiz from '../../store/actions/quiz'
-console.log(fns)
+
 class Quiz extends Component {
 
 

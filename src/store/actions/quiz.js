@@ -10,7 +10,6 @@ import {
     QUIZ_RETRY
 } from './actionTypes'
 
-
 function fetchQuizes() {
     return async dispatch => {
         dispatch(fetchQuizesStart())
@@ -91,9 +90,10 @@ export function finishQuiz() {
     }
 }
 
-export function quizNextQuestion() {
+export function quizNextQuestion(number) {
     return {
-        type: QUIZ_NEXT_QUESTION
+        type: QUIZ_NEXT_QUESTION,
+        number
     }
 }
 
@@ -103,7 +103,7 @@ function retryQuiz() {
     }
 }
 
-export function quizAnswerClick(answerId) {
+function quizAnswerClick(answerId) {
     return (dispatch, getState) => {
 
         const state = getState().quiz
@@ -144,4 +144,4 @@ function isQuizFinished(state) {
     return state.activeQuestion + 1 === state.quiz.length
 }
 
-export default { fetchQuizes, fetchQuizById, quizAnswerClick, retryQuiz }
+export default { fetchQuizes, fetchQuizById, quizAnswerClick, retryQuiz, quizNextQuestion }
