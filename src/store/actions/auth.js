@@ -12,10 +12,12 @@ export function auth(email, password, isLogin) {
             returnSecureToken: true
         }
 
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDPNGwljt_iqxFy3FTDnO8Sq-ukbf3IRI8'
+        const KEY = process.env.REACT_APP_AUTH_TOKEN
+
+        let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${KEY}`
 
         if (isLogin) {
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDPNGwljt_iqxFy3FTDnO8Sq-ukbf3IRI8'
+            url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${KEY}`
         }
 
         const response = await axios.post(url, authData)
