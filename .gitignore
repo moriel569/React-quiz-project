@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/config
+
 /node_modules
 /.pnp
 .pnp.js
@@ -28,3 +28,5 @@ debug.log*
 .firebase
 .firebaserc
 firebase.json
+
+/config
